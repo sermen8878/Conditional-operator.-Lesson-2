@@ -1,21 +1,15 @@
 public class Main {
     public static void main(String[] args) {
-        var clientOS = 0;
-        var clientDeviceYear = 2015;
-        if (clientOS == 0) {  // iOS
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для iOS по ссылке");
-            }
-        } else if (clientOS == 1) {
-            if (clientDeviceYear < 2015) {
-                System.out.println("Установите облегченную версию приложения для Android по ссылке");
-            } else {
-                System.out.println("Установите версию приложения для Android по ссылке");
-            }
+        // Инициализация переменной year
+        var year = 2021;  // Год для проверки
+
+        // Проверка, является ли год високосным
+        if (year <= 1584) {
+            System.out.println(year + " год не поддерживается (должен быть больше 1584)");
+        } else if ((year % 400 == 0) || (year % 100 != 0 && year % 4 == 0)) {
+            System.out.println(year + " год является високосным");
         } else {
-            System.out.println("Неизвестная операционная система");
+            System.out.println(year + " год не является високосным");
         }
     }
 }
